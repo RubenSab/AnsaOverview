@@ -3,14 +3,11 @@ name: Update News
 on:
   schedule:
     - cron: '0 */4 * * *'  # every 4 hours
-  workflow_dispatch:
+  workflow_dispatch:        # manual trigger
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      TZ: Europe/Rome
-      API_KEY: ${{ secrets.API_KEY }}
 
     steps:
       - name: Checkout repo
@@ -24,13 +21,18 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run your script
+      - name: Generate HTML
+        env:
+          TZ: Europe/Rome
+          API_KEY: ${{ secrets.API_KEY }}
         run: python main.py
 
-      - name: Commit and push changes
+      - name: Commit and push updated docs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/index.html
-          git commit -m "Update news at $(date -u '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          git commit -m "Update news at $(TZ='Europe/Rome' date +'%Y-%m-%d %H:%M:%S %Z')" || echo "No changes to commit"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
