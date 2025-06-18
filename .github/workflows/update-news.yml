@@ -1,4 +1,4 @@
-name: Update GitHub Pages
+name: Update News
 
 on:
   schedule:
