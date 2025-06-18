@@ -94,7 +94,10 @@ em {
   color: var(--accent-color);
   text-decoration: underline;
   white-space: nowrap;
-  align-self: flex-end; /* Ensures it aligns with the bottom of h1 */
+  align-self: flex-end; /* aligns baseline with h1 */
+  line-height: 2.5rem;  /* match h1 line height */
+  position: relative;
+  top: -1px;            /* subtle vertical nudge for baseline */
 }
 
 /* === Horizontal Rule === */
@@ -111,6 +114,7 @@ hr {
     padding: var(--spacing-sm);
   }
 
+  /* STACK title-row vertically on mobile for better proportions */
   .title-row {
     flex-direction: column;
     align-items: flex-start;
@@ -119,18 +123,29 @@ hr {
   }
 
   h1 {
-    font-size: 1.6rem;
-    line-height: 2.2rem;
+    font-size: 2rem;        /* keep title large and clear */
+    line-height: 2.5rem;
+    margin-bottom: 0;
   }
 
-  h3 {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
+  .mention-link {
+    font-size: 1.125rem;    /* slightly bigger for balance */
+    line-height: 1.75rem;
+    white-space: normal;    /* allow wrapping if needed */
+    align-self: flex-start; /* reset flex-end from desktop */
+    position: static;       /* reset relative positioning */
+    top: 0;
+    margin-bottom: var(--spacing-xs);
   }
 
   p {
     font-size: 1rem;
-    line-height: 1.6rem;
+    line-height: 1.7rem;
+    margin-bottom: 0;
   }
 
+  h3 {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
 }
