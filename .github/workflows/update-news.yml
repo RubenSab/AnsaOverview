@@ -9,6 +9,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
+      TZ: Europe/Rome
       API_KEY: ${{ secrets.API_KEY }}
 
     steps:
