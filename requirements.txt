@@ -1,0 +1,4 @@
+airium
+bs4
+google.genai
+requests

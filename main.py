@@ -3,6 +3,9 @@ from news_summarizer import NewsSummarizer
 from dict_to_html import DictToHtml
 from datetime import datetime
 
+import os
+API_KEY = os.getenv('API_KEY')
+
 # Get news (list) from Ansa.it using NewsScraper
 
 ansa_scraper = NewsScraper('https://www.ansa.it', selector='h3.title')
@@ -16,14 +19,14 @@ categoria come valore.
 scrivi solo il dizionario, il primo carattere del tuo output deve
 essere l'inizio del dizionario e l'ultimo carattere del tuo output
 deve essere l'ultimo carattere del dizionario. Non mettere backticks.
-Non lasciare dettagli ma non essere nemmeno troppo prolisso.
+Non tralasciare nessun dettagio.
 queste sono le notizie: """ + '\n'.join(news)
 
 summarizer = NewsSummarizer(
     news,
     'gemini-2.5-flash',
     summarizer_prompt,
-    'api_key'
+    API_KEY
 )
 categories = summarizer.categorize_and_summarize_titles()
 
@@ -36,5 +39,5 @@ DictToHtml(
     'it', 'ANSA.it AI Overview',
     'https://rubensabatini.com', 'by Ruben Sabatini',
     f'Riassunto delle notizie di Ansa.it di oggi {today_date} fatto da Google Gemini',
-    'docs/index.html', 'style.css'
+    'docs/index.html', '../style.css'
 ).generate_html()
