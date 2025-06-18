@@ -13,7 +13,7 @@
   --bold-color: #adb3bf;
   --hr-color: #444;
 
-  --max-width: 720px;
+  --max-width: 850px;
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
@@ -95,7 +95,6 @@ em {
   text-decoration: underline;
   white-space: nowrap;
   align-self: flex-end; /* aligns baseline with h1 */
-  line-height: 2.5rem;  /* match h1 line height */
   position: relative;
   top: -1px;            /* subtle vertical nudge for baseline */
 }
