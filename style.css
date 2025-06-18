@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+body {
+    background-color: #1e1e1e;
+    margin: 40px;
+}
+
+.container {
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+}
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap; /* allows children to wrap on smaller screens */
+    gap: 0.5rem;
+    margin: 0;
+}
+
+h1 {
+    font-family: "DM Mono";
+    color: #eeeeee;
+    font-size: 1.6em;
+    line-height: 2rem;
+    margin: 0;
+    flex: 1 1 auto; /* allows it to shrink/grow as needed */
+}
+
+.mention-link {
+    text-decoration: underline;
+    font-family: "DM Mono";
+    color: #71c9ce;
+    font-size: 1.1em;
+    line-height: 2rem;
+    margin-bottom: 0.8rem;
+    white-space: nowrap; /* prevents wrapping within the link text */
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 600px) {
+    .title-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mention-link {
+        margin-top: 0.5rem;
+    }
+}
+
+h3 {
+    font-family: "DM Mono";
+    color: #eeeeee;
+    font-size: 1.3em;
+    line-height: 1.6rem;
+    font-weight: 400;
+    margin-top: 1.5rem;
+}
+
+.mention-link {
+    text-decoration: underline;
+    font-family: "DM Mono";
+    color: #71c9ce;
+    font-size: 1.1em;
+    line-height: 1.5rem;
+}
+
+p, em {
+    font-family: "Inter", sans-serif;
+    color: #aaaaaa;
+    font-size: 1.1em;
+    line-height: 1.5rem;
+    font-weight: 350;
+    margin-bottom: 0.8rem;
+}
+
+hr {
+	color: #555555;
+}
