@@ -39,5 +39,5 @@ DictToHtml(
     'it', 'ANSA.it AI Overview',
     'https://rubensabatini.com', 'by Ruben Sabatini',
     f'Riassunto delle notizie di Ansa.it di oggi {today_date} fatto da Google Gemini',
-    'docs/index.html', '../style.css'
+    'docs/index.html', 'docs/style.css'
 ).generate_html()
