@@ -32,12 +32,13 @@ categories = summarizer.categorize_and_summarize_titles()
 
 # Generate html from categories (dict) using DictToHtml
 
-today_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+today_date = datetime.now().strftime("%Y-%m-%d")
+hours = datetime.now().strftime("%H:%M")
 
 DictToHtml(
     categories,
     'it', 'ANSA.it AI Overview',
     'https://rubensabatini.com', 'by Ruben Sabatini',
-    f'Riassunto delle notizie di Ansa.it di oggi {today_date} fatto da Google Gemini',
+    f'Riassunto delle notizie di Ansa.it di oggi {today_date} fatto alle {hours} da Google Gemini',
     'docs/index.html', 'stylesheet.css'
 ).generate_html()

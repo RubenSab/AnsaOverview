@@ -30,10 +30,11 @@ class DictToHtml:
                     with a.div(klass="title-row"):
                         with a.h1():
                             a(self.title)
-                        with a.a(href=self.mention_link, klass = "mention-link"):
-                            a(self.mention_link_text)
                         with a.em():
                             a(self.description)
+                        with a.a(href=self.mention_link, klass = "mention-link"):
+                            a(self.mention_link_text)
+                        a.br()
                     a.hr()
 
                     for category, content in self.categories.items():
