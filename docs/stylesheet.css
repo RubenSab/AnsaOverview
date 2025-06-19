@@ -1,0 +1,68 @@
+/* === Font Imports === */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+/* === Global Variables === */
+:root {
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --accent-color: #71c9ce;
+  --bg-color: #1e1e1e;
+  --text-color: #aaaaaa;
+  --heading-color: #eeeeee;
+  --bold-color: #adb3bf;
+  --hr-color: #444;
+
+  --max-width: 850px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+}
+
+/* === Base Styles === */
+body {
+  font-family: var(--font-mono);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: var(--spacing-md);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.container {
+	max-width: var(--max-width);
+	margin: auto;
+}
+
+h1, h3 {
+	font-family: var(--font-mono);
+	color: var(--heading-color);
+}
+
+h1 {
+	font-size: 30px !important;
+}
+
+h3 {
+	font-size: 24px !important;
+}
+
+p, em, a {
+	font-family: var(--font-sans);
+	color: var(--text-color);
+	font-size: 18px !important;
+}
+
+a {
+	color: var(--accent-color);
+}
+
+hr {
+	border: none;
+	height: 1px;
+	margin-top: 20px !important;
+	margin-bottom: 20px !important;
+	background-color: #555;
+}
