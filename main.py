@@ -19,7 +19,7 @@ categoria come valore.
 scrivi solo il dizionario, il primo carattere del tuo output deve
 essere l'inizio del dizionario e l'ultimo carattere del tuo output
 deve essere l'ultimo carattere del dizionario. Non mettere backticks.
-Non tralasciare nessun dettagio.
+Non tralasciare nessun dettagio e inserisci prima le notizie geopolitiche.
 queste sono le notizie: """ + '\n'.join(news)
 
 summarizer = NewsSummarizer(
