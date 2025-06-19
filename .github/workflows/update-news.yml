@@ -26,6 +26,9 @@ jobs:
           TZ: Europe/Rome
           API_KEY: ${{ secrets.API_KEY }}
         run: python main.py
+      
+      - name: Copy stylesheet to docs/
+        run: cp stylesheet.css docs/stylesheet.css
 
       - name: Commit and push updated docs
         run: |
