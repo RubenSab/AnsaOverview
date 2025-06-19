@@ -30,9 +30,9 @@ class DictToHtml:
                     with a.div(klass="title-row"):
                         with a.h1():
                             a(self.title)
-                        a.br()
                         with a.em():
                             a(self.description)
+                        a.br()
                         with a.a(href=self.mention_link, klass = "mention-link"):
                             a(self.mention_link_text)
                     a.hr()
