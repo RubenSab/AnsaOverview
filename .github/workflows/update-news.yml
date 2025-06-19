@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/index.html
+          git add docs/
           git commit -m "Update news at $(TZ='Europe/Rome' date +'%Y-%m-%d %H:%M:%S %Z')" || echo "No changes to commit"
           git push
         env:
